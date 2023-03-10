@@ -4,7 +4,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     color: #000;
-    background-color: #F7F7F8;
+    background-color: #FFFFFF;
 }
 
 a {
@@ -564,13 +564,13 @@ section {
 #consulta,
 #creditos {
     background-color: #fff;
-    height: 100vh;
+    min-height: 50vh;
 }
 
 .container-consulta,
 .container-creditos {
     background-color: #F7F7F8;
-    height: 450px;
+    min-height: 200px;
     border-radius: 10px;
 }
 
@@ -812,4 +812,43 @@ section {
         padding-right: 15px;
         padding-top: 70px;
     }
+}
+
+/* Estilo do preload */
+#preload {
+    content: url('../img/preload.gif');
+    display: block;
+    position: fixed;
+    top: calc(50%);
+    left: calc(50%);
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+  }
+
+
+
+  #imgConsulta {
+    height: 100%;
+    width: auto;
+}
+
+#imgConsulta.pequena {
+    clip-path: inset(20% 0px 35% 12%);
+    width: auto;
+}
+
+#imgConsulta.media {
+    clip-path: inset(20% 0px 17% 12%);
+    width: auto;
+}
+
+#imgConsulta.longa {
+    clip-path: inset(100px 0px 60px 0px);
+    width: auto;
+}
+
+#imgConsulta.normal {
+    height: auto;
+    width: auto;
 }

@@ -81,11 +81,27 @@
             </div>
         </header>
 
-        <section>
-            @yield('conteudo')
-        </section>
+        @yield('conteudo')
+
+        <div id="preload" style="display:none;"></div>
 
         <script src="{{ asset('serasa/js/main.js') }}"></script>
         <script src="{{ asset('serasa/js/tabs.js') }}"></script>
+
+        <script>
+
+            const preload = document.querySelector('#preload');
+
+            preload.style.display = 'block';
+
+            window.addEventListener('load', function() {
+                preload.style.display = 'none';
+            });
+
+            window.addEventListener('beforeunload', function() {
+                preload.style.display = 'block';
+            });
+
+          </script>
     </body>
 </html>
