@@ -9,7 +9,7 @@
                                 Produtos para análise de crédito e cadastro
                             </h2>
                             <div class="row row-cols-1 row-cols-md-3 g-4">
-                                <div class="col-lg-4">
+                                <!--<div class="col-lg-4">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">Achei-Recheque</h5>
@@ -20,7 +20,7 @@
                                             <a href="" type="button" class="btn btn-primary btn-sm">Acessar</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="col-lg-4">
                                     <div class="card">
                                         <div class="card-body">
@@ -33,7 +33,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <!--<div class="col-lg-4">
                                     <div class="card">
                                         <div class="card-body">
                                             <h5 class="card-title">Relatório Básico PJ</h5>
@@ -44,7 +44,7 @@
                                             <a href="" type="button" class="btn btn-primary btn-sm">Acessar</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                     </div>

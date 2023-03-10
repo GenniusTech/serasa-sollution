@@ -1,7 +1,7 @@
 @extends('dashboard.layout')
     @section('conteudo')
         <section id="consulta">
-            <div class="container container-consulta h-100">
+            <div class="container container-consulta">
                 <div class="row">
                     <div id="consultaCpf" class="col-sm-3 heading-consulta">
                         <h1 class="mb-0">Consultar pelo CPF</h1>
@@ -24,7 +24,7 @@
                                     <i class="bi bi-search"></i>
                                 </button>
                             </div>
-                            <div id="resultCpf">
+                            <div id="resultCpf" class="mb-5 mt-3">
                                 <table id="cpf-table"> </table>
                             </div>
                         </div>
@@ -42,7 +42,7 @@
                                 </button>
                             </div>
 
-                            <div id="resultCnpj">
+                            <div id="resultCnpj" class="mb-5 mt-3">
                                 <table id="cnpj-table"> </table>
                             </div>
                         </div>
@@ -68,8 +68,8 @@
             success: function(response) {
                 const array = response.result;
                 var row = '<div class="card p-5">' +
-                            '<p> Nome:' + array.nome_da_pf + '</p>' +
-                            '<p> CPF:' + array.numero_de_cpf + '</p>' +
+                            '<p> Nome: ' + array.nome_da_pf + '</p>' +
+                            '<p> CPF: ' + array.numero_de_cpf + '</p>' +
                             '<p> Nascimento: ' + array.data_nascimento + '</p>' +
                             '<p> Situação: ' + array.situacao_cadastral + '</p>' +
                             '<p> Digito: ' + array.digito_verificador + '</p>' +
