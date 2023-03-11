@@ -3,7 +3,7 @@
         <div class="limiter">
             <div class="container-login100">
                 <div class="wrap-login100">
-                    <form class="login100-form validate-form" method="POST" action="{{ route('login_action') }}">
+                    <form class="login100-form validate-form" method="POST" action="{{ route('auth') }}">
                         <input type="hidden" value={{  csrf_token() }} name="_token">
                         <div class="d-flex justify-content-center">
                             <img src="{{ asset('serasa/img/logo.png') }}" alt="" class="w-50">
@@ -12,6 +12,9 @@
                             Acessar minha área
                         </span>
                         <div>
+                            @if($mensagem = Session::get('erro'))
+                                {{ $mensagem }}
+                            @endif
                             @if ($errors->any())
                             <div style="background-color: rgb(227, 112, 112); color:white;text-align: center; border-radius:5px;">
                                 <ul class="alert alert-error">
@@ -21,16 +24,16 @@
                                 </ul>
                             </div>
                             @endif
-                        </div><br>
+                        </div>
                         <div class="form-floating mb-3">
-                            <input type="email" class="form-control" name="email" placeholder="Insira seu login">
-                            <label for="floatingInput">Insira seu login</label>
+                            <input type="email" class="form-control" name="email" placeholder="E-mail">
+                            <label for="floatingInput">E-mail</label>
                         </div>
                         <div class="form-floating">
-                            <input type="password" class="form-control" name="senha" placeholder="Digite a sua senha">
-                            <label for="floatingPassword">Digite a sua senha</label>
+                            <input type="password" class="form-control" name="password" placeholder="Senha">
+                            <label for="floatingPassword">Senha</label>
                         </div>
-                        <div class="d-inline-flex pt-3">
+                        {{-- <div class="d-inline-flex pt-3">
                             <a href="#" class="pe-5 password">Esqueci minha senha</a>
                             <input
                                 class="form-check-input"
@@ -41,7 +44,7 @@
                             <label class="form-check-label ps-1" for="defaultCheck1">
                                 Mantenha-me conectado
                             </label>
-                        </div>
+                        </div> --}}
                         <div class="d-grid gap-2 pt-4 button-login">
                             <button class="btn btn-primary" type="submit">Acessar</button>
                         </div>

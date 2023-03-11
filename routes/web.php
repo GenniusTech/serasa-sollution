@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Client;
 
 
-    Route :: get ( '/', [ LoginController ::class, 'index' ])-> name ( 'login' );
-    Route::post('/', [LoginController::class, 'login_action'])->name('login_action');
+    Route::get ( '/', [ LoginController ::class, 'index' ])-> name ( 'login' );
+    Route::post('/', [LoginController::class, 'auth'])->name('auth');
 
 // Route::middleware(['auth'])->group(function () {
     Route::get('/painel', [DashController::class, 'dashboard'])->name('dashboard');
