@@ -20,22 +20,24 @@ class ApiUserController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:100',
+            'nome' => 'required|max:100',
+            'cpf' => 'required|max:100',
             'email' => 'required|email|unique:users|max:100',
             'password' => 'required|min:6|max:255',
-            'tipo' => 'required|integer',
-            'consultas' => 'required|integer',
+            'id_assas' => 'required|integer',
+            'ticket' => 'required|integer',
         ]);
-    
+
         $user = User::create([
-            'name' => $validatedData['name'],
+            'nome' => $validatedData['nome'],
+            'cpf' => $validatedData['cpf'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
-            'tipo' => $validatedData['tipo'],
-            'consultas' => $validatedData['consultas'],
+            'id_assas' => $validatedData['id_assas'],
+            'ticket' => $validatedData['ticket'],
             'created_at' => now(),
         ]);
-    
+
         return response()->json(['message' => 'Usuário criado com sucesso.'], 201);
     }
     
@@ -48,11 +50,12 @@ class ApiUserController extends Controller
     public function update(Request $request, User $user)
     {
         $validatedData = $request->validate([
-            'name' => 'sometimes|required|max:100',
+            'nome' => 'sometimes|required|max:100',
             'email' => 'sometimes|required|email|unique:users,email,'.$user->id.'|max:100',
             'password' => 'sometimes|required|min:6|max:255',
-            'tipo' => 'sometimes|required|integer',
-            'consultas' => 'sometimes|required|integer',
+            'cpf' => 'sometimes|required|integer',
+            'id_assas' => 'sometimes|required|integer',
+            'ticket' => 'sometimes|required|integer',
         ]);
 
         $user->update($validatedData);

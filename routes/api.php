@@ -3,7 +3,6 @@
 use App\Http\Controllers\ApiConsultaController;
 use App\Http\Controllers\ApiextractClientController;
 use App\Http\Controllers\ApiUserController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
