@@ -69,16 +69,16 @@
                     <tr>
                         <th scope="row">Nome</th>
                         <th>Email</th>
-                        <th class="text-center">Consultas</th>
+                        <th class="text-center">Créditos</th>
                         <th class="text-center">Ações</th>
                     </tr>
                     </thead>
                     <tbody>
                     ${dados.map(item => `
                         <tr>
-                        <td>${item.name}</td>
+                        <td>${item.nome}</td>
                         <td>${item.email}</td>
-                        <td class="text-center">${item.consultas}</td>
+                        <td class="text-center">${item.credito}</td>
                         <td class="text-center">
                             <button type="button" class="btn btn-danger options" onclick="dellUser(${item.id})"> <i class="bi bi-trash"></i> </button>
                         </td>
@@ -110,11 +110,11 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        name:       $('input[name=name]').val(),
+                        nome:       $('input[name=name]').val(),
                         email:      $('input[name=email]').val(),
                         password:   $('input[name=password]').val(),
                         tipo:       $('#tipo option:selected').val(),
-                        consultas:  500,
+                        creditos:  500,
                     }),
                 })
                 .then(response => response.json())
